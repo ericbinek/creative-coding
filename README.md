@@ -1,1 +1,1 @@
-# creative-coding
+# Creative Coding Collection

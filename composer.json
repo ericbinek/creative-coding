@@ -1,0 +1,11 @@
+{
+    "name": "ericbinek/creative-coding",
+    "require": {
+        "php-ffmpeg/php-ffmpeg": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CreativeCoding\\": "src/"
+        }
+    }
+}
