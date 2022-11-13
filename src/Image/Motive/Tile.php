@@ -13,7 +13,8 @@ class Tile
         $this->background = null;
         $this->padding = null;
         $this->thickness = null;
-        $this->shots = [];
+        $this->x = null;
+        $this->y = null;
     }
 
     function __set($name, $value)
@@ -37,6 +38,12 @@ class Tile
             case 'thickness':
                 $this->thickness = (int)$value;
                 break;
+            case 'x':
+                $this->x = (int)$value;
+                break;
+            case 'y':
+                $this->y = (int)$value;
+                break;
             default:
                 throw new Exception(__METHOD__ . '(' . $name . ') unsupported', 1);
                 break;
@@ -44,7 +51,7 @@ class Tile
     }
 
 
-    function tick($image, $offsetX, $offsetY)
+    function tick()
     {
         if (rand(0, 1) === 1) {
             $this->thickness++;
@@ -53,14 +60,14 @@ class Tile
         }
     }
 
-    function render($image, $offsetX, $offsetY)
+    function render($image)
     {
         for ($i = 0; $i < $this->thickness; $i++) {
 
-            $fromX = $offsetX + $this->padding + $i; // from X
-            $fromY = $offsetY + $this->padding + $i; // from Y
-            $toX = $offsetX + $this->size - ($this->padding + 1) - $i; // to X
-            $toY = $offsetY + $this->size - ($this->padding + 1) - $i; // to Y
+            $fromX = $this->x + $this->padding + $i; // from X
+            $fromY = $this->y + $this->padding + $i; // from Y
+            $toX = $this->x + $this->size - ($this->padding + 1) - $i; // to X
+            $toY = $this->y + $this->size - ($this->padding + 1) - $i; // to Y
 
             imagerectangle(
                 $image,

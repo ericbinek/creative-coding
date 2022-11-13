@@ -75,8 +75,10 @@ function create($name, $size, $columns, $rows, $dimensions, $colors, $framesPerS
     }
 }
 
-create('twitter-shared-image', 32, 20, 10, [900, 450], [[255, 255, 255], [0, 0, 0]], 24, 15);
-create('instagram-photo', 32, 24, 24, [1080, 1080],  [[255, 255, 255], [0, 0, 0]], 24, 15);
-create('instagram-story', 32, 24, 48, [1080, 1920],  [[255, 255, 255], [0, 0, 0]], 24, 15);
+create('dailyart', 16, 32, 32, [512, 512], [[255, 255, 255], [0, 0, 0]], 24, 15);
+
+// create('twitter-shared-image', 32, 20, 10, [900, 450], [[255, 255, 255], [0, 0, 0]], 24, 15);
+// create('instagram-photo', 32, 24, 24, [1080, 1080],  [[255, 255, 255], [0, 0, 0]], 24, 15);
+// create('instagram-story', 32, 24, 48, [1080, 1920],  [[255, 255, 255], [0, 0, 0]], 24, 15);
 
 echo ceil(memory_get_usage() / 1024) . " kBytes \n";
