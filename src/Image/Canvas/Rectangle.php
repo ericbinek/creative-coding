@@ -4,14 +4,14 @@ namespace CreativeCoding\Image\Canvas;
 
 use \Exception;
 
-class Square
+class Rectangle
 {
     function __construct()
     {
         $this->width = null;
         $this->height = null;
         $this->color = null;
-        $this->grid = null;
+        $this->collection = null;
     }
 
     function __set($name, $value)
@@ -26,8 +26,8 @@ class Square
             case 'color':
                 $this->color = $value;
                 break;
-            case 'grid':
-                $this->grid = $value;
+            case 'collection':
+                $this->collection = $value;
                 break;
             default:
                 throw new Exception(__METHOD__ . '(' . $name . ') unsupported', 1);
@@ -37,13 +37,15 @@ class Square
 
     function tick($image)
     {
-        $this->grid->tick($image, $this->width, $this->height);
+        imagefilledrectangle($image, 0, 0, $this->width, $this->height, $this->color);
+
+        $this->collection->tick($image);
     }
 
     function render($image)
     {
         imagefill($image, 0, 0, $this->color);
 
-        $this->grid->render($image, $this->width, $this->height);
+        $this->collection->render($image);
     }
 }

@@ -45,7 +45,7 @@ class Image
     function create()
     {
         $this->handle = imagecreate($this->canvas->width, $this->canvas->height);
-        imageantialias($this->handle, false);
+        imageantialias($this->handle, true);
         imageresolution($this->handle, 144, 144);
     }
     
