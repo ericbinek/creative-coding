@@ -39,7 +39,7 @@ class Rectangle
     {
         imagefilledrectangle($image, 0, 0, $this->width, $this->height, $this->color);
 
-        $this->collection->tick($image);
+        $this->collection->tick($image, $this->width, $this->height);
     }
 
     function render($image)

@@ -42,8 +42,7 @@ class Line
 
     function tick($from = null, $to = null)
     {
-        $this->from = $from;
-        $this->to = $to;
+
     }
 
     function render($image)
